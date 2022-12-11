@@ -80,4 +80,29 @@ SELECT employees.Name
 FROM employees
 INNER JOIN companies ON companies.Name = employees.Company
 WHERE employees.Role='Graphic Designer';
+# Count & Filter
 
+#  1.Find the person with the highest number of points in students
+
+	SELECT name 
+FROM students 
+WHERE Points=(SELECT max (Points) FROM students);
+
+#  2.Find the average of points in students
+
+SELECT avg(points) FROM students;
+
+#  3.Find the number of students that have 500 points
+
+SELECT count (name) FROM students
+WHERE Points=500;
+
+#  4.Find the names of students that contains 's'
+
+SELECT name FROM students 
+WHERE name like '%s%';
+
+#  5.Find all students based on the decreasing order of their points
+
+SELECT * from students 
+ORDER by Points DESC 
